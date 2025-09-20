@@ -1,12 +1,13 @@
-fastapi
+fastapi[standard]
 pillow
 ultralytics
 requests
 pydantic
 python-multipart
 fastapi
-uvicorn[standard]
+uvicorn
 joblib
+
 
 
 
