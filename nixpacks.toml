@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["...", "libGL", "mesa"]
+nixPkgs = ["libGL", "mesa", "libGLU"]
 
 [phases.install]
 dependsOn = ["setup"]
