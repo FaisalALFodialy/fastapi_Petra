@@ -1,6 +1,6 @@
 fastapi
 pillow
-ultralytics
+ultralytics==8.3.202 --no-deps
 requests
 pydantic
 python-multipart
