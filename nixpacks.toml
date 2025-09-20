@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["...", "libGL", "libGLU", "pkg-config", "cmake", "mesa", "libglvnd", "ffmpeg", "libsm", "libxext", "libxrender", "libglib", "libgomp"]
+nixPkgs = ["...", "libGL", "libGLU", "pkg-config", "cmake", "mesa", "libglvnd", "ffmpeg", "glib", "libgomp"]
 
 [phases.install]
 dependsOn = ["setup"]
