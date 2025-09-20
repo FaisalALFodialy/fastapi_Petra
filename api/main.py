@@ -4,8 +4,8 @@ from PIL import Image
 import io
 import os
 import requests
-from inference import OilSpillDetector
-from model import ImageURL
+from .inference import OilSpillDetector
+from .model import ImageURL
 
 # TODO: 
 # 1. added type checking code for the image
