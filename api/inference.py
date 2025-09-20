@@ -1,19 +1,10 @@
-import os
-import sys
-
-# Force headless mode before any CV2 imports
-os.environ['OPENCV_HEADLESS'] = '1'
-os.environ['QT_QPA_PLATFORM'] = 'offscreen'
-
-# Force ultralytics to use headless mode
-os.environ['ULTRALYTICS_CONFIG_DIR'] = '/tmp'
-
 from ultralytics import YOLO
 import time
 import cv2 
 from PIL import Image, ImageDraw, ImageFont
 import io
 import base64
+
 
 class OilSpillDetector():
     def __init__(self, model_path: str):
@@ -27,8 +18,10 @@ class OilSpillDetector():
         }
         self.load_model()
 
+
     def load_model(self):
         """Load The Model"""
+
         try:
             self.model = YOLO(self.model_path)
             print(f"Model loaded from {self.model_path}")
@@ -40,7 +33,9 @@ class OilSpillDetector():
         """Check if model is loaded"""
         return self.model is not None
 
+    
     def predict(self, image, conf_threshold: float = 0.15, return_image: bool = False):
+
         start_time = time.time()
 
         results = self.model.predict(
@@ -62,8 +57,7 @@ class OilSpillDetector():
                 draw = ImageDraw.Draw(annotated_image)
                 
                 try:
-                    # Use default font in headless environment
-                    font = ImageFont.load_default()
+                    font = ImageFont.truetype("arial.ttf", 20)
                 except:
                     font = ImageFont.load_default()
 
@@ -123,3 +117,4 @@ class OilSpillDetector():
             result["annotated_image"] = annotated_image_base64
             
         return result
+
