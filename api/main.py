@@ -6,6 +6,8 @@ import os
 import requests
 from .inference import OilSpillDetector
 from .model import ImageURL
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # TODO: 
 # 1. added type checking code for the image
@@ -13,6 +15,14 @@ from .model import ImageURL
 
 
 api = FastAPI(title="Oil Spill Detection API", version="1.0.0")
+
+api.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],      
+    allow_credentials=True,   
+    allow_methods=["*"],      
+    allow_headers=["*"],     
+)
 
 # Initialize the model
 # detector = OilSpillDetector(model_path="../model/oil_spill_best_md_obj.pt")
