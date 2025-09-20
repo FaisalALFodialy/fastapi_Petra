@@ -1,9 +1,12 @@
 fastapi
-uvicorn[standard]==0.36.0
-pillow==11.3.0
-ultralytics==8.3.202
-requests==2.32.5
-pydantic==2.11.9
-python-multipart==0.0.20
+pillow
+ultralytics
+requests
+pydantic
+python-multipart
+fastapi
+uvicorn[standard]
+joblib
+
 
 
