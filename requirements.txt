@@ -4,10 +4,9 @@ ultralytics
 requests
 pydantic
 python-multipart
-fastapi
 uvicorn
-joblib
 opencv-python-headless
+
 
 
 
