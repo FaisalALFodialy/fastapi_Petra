@@ -1,13 +1,19 @@
+import os
+import sys
+
+# Force headless mode before any CV2 imports
+os.environ['OPENCV_HEADLESS'] = '1'
+os.environ['QT_QPA_PLATFORM'] = 'offscreen'
+
+# Force ultralytics to use headless mode
+os.environ['ULTRALYTICS_CONFIG_DIR'] = '/tmp'
+
 from ultralytics import YOLO
 import time
 import cv2 
 from PIL import Image, ImageDraw, ImageFont
 import io
 import base64
-import os
-
-# Set OpenCV to run in headless mode
-os.environ['OPENCV_HEADLESS'] = '1'
 
 class OilSpillDetector():
     def __init__(self, model_path: str):

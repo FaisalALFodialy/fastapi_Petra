@@ -1,5 +1,6 @@
 [phases.setup]
-nixPkgs = ["python3", "libGL", "mesa"]
+nixPkgs = ["python3", "libGL", "mesa", "libgcc", "glibc", "libglvnd"]
+aptPkgs = ["libgl1-mesa-glx", "libglib2.0-0", "libgomp1"]
 
 [phases.install]
 dependsOn = ["setup"]
